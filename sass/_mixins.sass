@@ -1,0 +1,21 @@
+=tablet-only
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop})
+    @content;
+
+=tablet
+  @media (min-width: #{$tablet})
+    @content;
+
+=desktop
+  @media (min-width: #{$desktop})
+    @content;
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
