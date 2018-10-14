@@ -22,9 +22,9 @@
   font-weight: normal;
 }
 
-body {
+#event-list {
   color: black;
-  margin: 0;
+  margin: 0 auto;
   font-family: "Soleil-Book", Tahoma, Sans-Serif;
   font-size: 12px;
 }
@@ -143,6 +143,13 @@ a, a:hover, a:focus, a:visited {
   max-height: 50px;
 }
 
+@media (min-width: 1200px) {
+  .event-logo img {
+    max-width: 200px;
+    max-height: 100px;
+  }
+}
+
 @media (min-width: 768px) {
   .event-logo {
     order: 2;
@@ -167,9 +174,21 @@ a, a:hover, a:focus, a:visited {
   font-size: 40px;
 }
 
+@media (min-width: 1200px) {
+  .event-day {
+    font-size: 80px;
+  }
+}
+
 .event-month {
   font-size: 12px;
   margin-top: -8px;
+}
+
+@media (min-width: 1200px) {
+  .event-month {
+    font-size: 24px;
+  }
 }
 
 .event-details {
@@ -187,29 +206,89 @@ a, a:hover, a:focus, a:visited {
 
 .event-sl {
   padding: 12px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   font-size: 5.5px;
 }
 
-.event-type {
+@media (min-width: 1200px) {
+  .event-sl {
+    font-size: 12px;
+  }
+}
+
+.event-type-orange {
   display: inline-block;
   padding: 4px 8px;
-  background: #ffc000;
-  color: #94720a;
   letter-spacing: 1px;
   margin-right: 15px;
+  margin-bottom: 5px;
+  background: #ffc000;
+  color: #997300;
+}
+
+@media (min-width: 1200px) {
+  .event-type-orange {
+    padding: 6px 12px;
+  }
+}
+
+.event-type-blue {
+  display: inline-block;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  background: #6bdcfc;
+  color: #049eca;
+}
+
+@media (min-width: 1200px) {
+  .event-type-blue {
+    padding: 6px 12px;
+  }
+}
+
+.flag-fr:before, .flag-pl:before {
+  content: '';
+  display: none;
+  width: 16px;
+  margin-right: 8px;
+}
+
+@media (min-width: 1200px) {
+  .flag-fr:before {
+    display: block;
+    content: url("../images/flag-fr.svg");
+  }
+}
+
+@media (min-width: 1200px) {
+  .flag-pl:before {
+    display: block;
+    content: url("../images/flag-pl.svg");
+  }
 }
 
 .event-place {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   color: #bbbbbb;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 5px;
 }
 
 .event-hl {
   font-size: 10.5px;
   line-height: 1.6;
+  max-width: 520px;
+}
+
+@media (min-width: 1200px) {
+  .event-hl {
+    font-size: 21px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {

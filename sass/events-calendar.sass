@@ -1,17 +1,17 @@
-@import "mixins";
-@import "variables";
+@import "mixins"
+@import "variables"
 
-@import "fontface";
-@include fontFace('Soleil-Bold','../fonts/Soleil-Bold');
-@include fontFace('Soleil-Light','../fonts/Soleil-Light');
-@include fontFace('Soleil-Book','../fonts/Soleil-Book');
+@import "fontface"
+@include fontFace('Soleil-Bold','../fonts/Soleil-Bold')
+@include fontFace('Soleil-Light','../fonts/Soleil-Light')
+@include fontFace('Soleil-Book','../fonts/Soleil-Book')
 
-body
+#event-list
   color: $black-color
-  margin: 0
+  margin: 0 auto
   font:
     family: $font-normal
-    size: 12px
+    size: $default-font-size - 4px
 
 a, a:hover, a:focus, a:visited
   text-decoration: none
@@ -52,6 +52,9 @@ a, a:hover, a:focus, a:visited
   img
     max-width: $logo-max-width
     max-height: $logo-max-height
+    +desktop
+      max-width: $logo-max-width * 2
+      max-height: $logo-max-height * 2
   +tablet
     order: 2
 
@@ -68,12 +71,18 @@ a, a:hover, a:focus, a:visited
 
 .event-day
   font:
-    size: $event-day-size
+    size: $default-font-size + 24px
+  +desktop
+    font:
+      size: $default-font-size + 64px
 
 .event-month
   font:
-    size: $event-month-size
+    size: $default-font-size - 4px
   margin-top: -8px
+  +desktop
+    font:
+      size: $default-font-size + 8px
 
 .event-details
   width: 100%
@@ -85,30 +94,51 @@ a, a:hover, a:focus, a:visited
 
 .event-sl
   padding: 12px 0
+  display: flex
+  align-items: center
+  flex-wrap: wrap
   font:
-    size: $event-sl-size
+    size: $default-font-size - 10.5px
+  +desktop
+    font:
+      size: $default-font-size - 4px
 
-.event-type
-  display: inline-block
-  padding: 4px 8px
-  background: $event-type-bg-color
-  color: $event-type-color
-  letter-spacing: 1px
-  margin-right: 15px
+.event-type-orange
+  +event-type
+  background: $event-type-orange-color
+  color: darken($event-type-orange-color, 20)
+
+.event-type-blue
+  +event-type
+  background: $event-type-blue-color
+  color: darken($event-type-blue-color, 30)
+
+%flag-styles
+  content: ''
+  display: none
+  width: 16px
+  margin-right: 8px
+
++flag-list
+
++flag-country
 
 .event-place
-  display: inline-block
+  display: flex
+  align-items: center
   color: $event-place-color
   text-transform: uppercase
   letter-spacing: 2px
-  margin-top: 5px
 
 .event-hl
   font:
-    size: $event-hl-size
+    size: $default-font-size - 5.5px
   line-height: 1.6
+  max-width: 520px
+  +desktop
+    font:
+      size: $default-font-size + 5px
 
 .event-arrow
-
   +tablet-only
     display: none
